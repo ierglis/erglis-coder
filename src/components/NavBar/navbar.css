@@ -1,13 +1,19 @@
+body{
+    margin: 0;
+}
+
 .navbar{
     background-color: #9A876B;
+    border-bottom: solid 2px #e7413b;
 }
 
 .rowContent{
-    max-width:1200px;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
 }
 
 .rowContent h1{
@@ -18,4 +24,9 @@
     display: flex;
     flex-direction: row;
 
+}
+
+.categorias p{
+    color: #ffffff;
+    margin-right:20px;
 }
