@@ -1,0 +1,21 @@
+.navbar{
+    background-color: #9A876B;
+}
+
+.rowContent{
+    max-width:1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rowContent h1{
+    color: #E7413B
+}
+
+.categorias{
+    display: flex;
+    flex-direction: row;
+
+}
