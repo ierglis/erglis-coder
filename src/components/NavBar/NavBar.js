@@ -1,6 +1,7 @@
 import React from 'react';
 import "./navbar.css";
-import logo from "../../kelderLogo.png"
+// import logo from "../../../public/kelderLogo.png"
+import cart from "./cart.svg"
 
 export const NavBar = () => {
    
@@ -9,14 +10,14 @@ export const NavBar = () => {
         <header className = "navbar">
             <div className = "rowContent">
                 <div className = "brandName">
-                    <img className= "logo" alt= "" src = "../../kelderLogo.png"/>
+                    <img className= "logo" alt= "" src = "http://m.adamafel.com/img/clientes/logos/kelder.png"/>
                 </div>
                 <div className = "categorias">
-                    <p>Zapatillas</p>
-                    <p>Zapatos</p>
-                    <p>Pantalones</p>
+                    <a href = "#"><p>Zapatillas</p></a>
+                    <a href = "#"><p>Zapatos</p></a>
+                    <a href = "#"><p>Pantalones</p></a>
                 
-                    {/* <img className= "cart" alt= "" src = "../../public/carrito.png"/> */}
+                    <a href = "#"><img className= "cart" alt= "" src = {cart}/> </a>
                 </div>
             </div>
             

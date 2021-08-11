@@ -3,7 +3,7 @@ body{
 }
 
 .navbar{
-    background-color: #9A876B;
+    background-color: black;
     border-bottom: solid 2px #e7413b;
 }
 
@@ -16,6 +16,11 @@ body{
     margin: auto;
 }
 
+.logo{
+    width: 180px;
+    margin-top: 4px;
+}
+
 .rowContent h1{
     color: #E7413B
 }
@@ -23,10 +28,19 @@ body{
 .categorias{
     display: flex;
     flex-direction: row;
-
 }
 
 .categorias p{
     color: #ffffff;
     margin-right:20px;
+    text-decoration: none;
+}
+.categorias a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+.cart{
+    position: relative;
+    top: 13px;
+    width: 17px;
 }
