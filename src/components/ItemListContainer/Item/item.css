@@ -1,0 +1,20 @@
+.prod{
+    width: 33%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.itemsprod{
+    width: 70%;
+    margin: auto;
+    border: 1px #D6D6D6 solid;
+    border-radius: 10px!important;
+}
+
+.itemsprod img{
+    margin-top: 10px;
+}
+
+.itemsprod h3{
+    margin:0;
+}
