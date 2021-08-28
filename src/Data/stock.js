@@ -5,7 +5,7 @@ export const stock = [
         desc: "Zapatillas nike airforce para todos los dias",
         price: "$12000",
         img: "https://via.placeholder.com/200",
-        idCat: 1
+        idCat: "zapatillas"
     },
     {
         id: 1,
@@ -13,7 +13,7 @@ export const stock = [
         desc: "Zapatillas nike running para correr",
         price: "$13000",
         img: "https://via.placeholder.com/200",
-        idCat: 1
+        idCat: "zapatillas"
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const stock = [
         desc: "Zapatillas nike urbanas buen calzado",
         price: "$14000",
         img: "https://via.placeholder.com/200",
-        idCat: 1
+        idCat: "zapatillas"
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ export const stock = [
         desc: "Zapatos ideales para todos los dias",
         price: "$4000",
         img: "https://via.placeholder.com/200",
-        idCat: 2
+        idCat: "zapatos"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ export const stock = [
         desc: "Zapatos para ir a trabajar",
         price: "$5000",
         img: "https://via.placeholder.com/200",
-        idCat: 2
+        idCat: "zapatos"
     },
     {
         id: 5,
@@ -45,7 +45,7 @@ export const stock = [
         desc: "Zapatos botita suela de goma",
         price: "$6000",
         img: "https://via.placeholder.com/200",
-        idCat: 2
+        idCat: "zapatos"
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ export const stock = [
         desc: "Ojotas para mujeres",
         price: "$1000",
         img: "https://via.placeholder.com/200",
-        idCat: 3
+        idCat: "ojotas"
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ export const stock = [
         desc: "Ojotas hombres",
         price: "$2000",
         img: "https://via.placeholder.com/200",
-        idCat: 3
+        idCat: "ojotas"
     },
     {
         id: 8,
@@ -69,6 +69,6 @@ export const stock = [
         desc: "Ojotas unisex para la playa",
         price: "$3000",
         img: "https://via.placeholder.com/200",
-        idCat: 3
+        idCat: "ojotas"
     },
 ]

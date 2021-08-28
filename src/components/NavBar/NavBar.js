@@ -13,9 +13,9 @@ export const NavBar = () => {
                     <img className= "logo" alt= "" src = "/imagen/kelderLogo.png"/>
                 </div>
                 <div className = "categorias">
-                    <Link to = {"/category/1"}><p>Zapatillas</p></Link>
-                    <Link to = {"/category/2"}><p>Zapatos</p></Link>
-                    <Link to = {"/category/3"}><p>Pantalones</p></Link>
+                    <Link to = {"/category/zapatillas"}><p>Zapatillas</p></Link>
+                    <Link to = {"/category/zapatos"}><p>Zapatos</p></Link>
+                    <Link to = {"/category/ojotas"}><p>Ojotas</p></Link>
                     <CartWidget/>
                 </div>
             </div>

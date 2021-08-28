@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 export const ItemListContainer = (props) => {
     const { catId } = useParams()
 
+    console.log(catId)
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
@@ -17,8 +18,8 @@ export const ItemListContainer = (props) => {
             .then(res => {
 
                 if (catId) {
-                    const arrayFiltrado = res.filter( prod => prod.idCat === catId)
-                    setData( arrayFiltrado )
+                    const catFilter = res.filter( prod => prod.idCat === catId)
+                    setData( catFilter )
                 } else {
                     setData(res)
                 }
