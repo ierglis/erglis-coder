@@ -1,6 +1,6 @@
 export const stock = [
     {
-        id: 0,
+        id: "0",
         name: "Zapatillas nike airforce",
         desc: "Zapatillas nike airforce para todos los dias",
         price: "$12000",
@@ -8,7 +8,7 @@ export const stock = [
         idCat: "zapatillas"
     },
     {
-        id: 1,
+        id: "1",
         name: "Zapatillas nike running",
         desc: "Zapatillas nike running para correr",
         price: "$13000",
@@ -16,7 +16,7 @@ export const stock = [
         idCat: "zapatillas"
     },
     {
-        id: 2,
+        id: "2",
         name: "Zapatillas nike urbanas",
         desc: "Zapatillas nike urbanas buen calzado",
         price: "$14000",
@@ -24,7 +24,7 @@ export const stock = [
         idCat: "zapatillas"
     },
     {
-        id: 3,
+        id: "3",
         name: "Zapatos urbanos",
         desc: "Zapatos ideales para todos los dias",
         price: "$4000",
@@ -32,7 +32,7 @@ export const stock = [
         idCat: "zapatos"
     },
     {
-        id: 4,
+        id: "4",
         name:"Zapatos elegantes",
         desc: "Zapatos para ir a trabajar",
         price: "$5000",
@@ -40,7 +40,7 @@ export const stock = [
         idCat: "zapatos"
     },
     {
-        id: 5,
+        id: "5",
         name: "Zapatos botita",
         desc: "Zapatos botita suela de goma",
         price: "$6000",
@@ -48,7 +48,7 @@ export const stock = [
         idCat: "zapatos"
     },
     {
-        id: 6,
+        id: "6",
         name: "Ojotas Havaianas F",
         desc: "Ojotas para mujeres",
         price: "$1000",
@@ -56,7 +56,7 @@ export const stock = [
         idCat: "ojotas"
     },
     {
-        id: 7,
+        id: "7",
         name: "Ojotas Havaianas M",
         desc: "Ojotas hombres",
         price: "$2000",
@@ -64,7 +64,7 @@ export const stock = [
         idCat: "ojotas"
     },
     {
-        id: 8,
+        id: "8",
         name: "Ojotas Havaianas",
         desc: "Ojotas unisex para la playa",
         price: "$3000",

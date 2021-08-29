@@ -1,0 +1,77 @@
+.contenedordedetail{
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.prodetail{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.detailimg{
+    margin-right: 110px;
+}
+
+.detailimg img{
+    height: 400px;
+}
+
+.detailingCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pricecont{
+    font-size: 20px;
+}
+
+.descont{
+    font-size: 18px;
+}
+
+.detcontent{
+    padding: 60px;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+}
+
+.addcartboton{
+    margin-top: 70px;
+    background-color: #e7413b;
+    border: 0;
+    padding: 12px 80px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 29px;
+}
+
+.addcartboton:hover{
+    margin-top: 70px;
+    background-color: black;
+    border: 0;
+    padding: 12px 80px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 29px;
+}
+
+.contenedordedetail a{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    color: #e7413b;
+    font-size: 25px;
+}
+.contenedordedetail a:hover{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    color: black;
+    font-size: 25px;
+}

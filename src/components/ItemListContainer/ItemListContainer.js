@@ -3,6 +3,7 @@ import "./itemlistcontainer.css";
 import {ItemList} from "./ItemList/ItemList"
 import {pedirDatos} from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom"
 
 export const ItemListContainer = (props) => {
     const { catId } = useParams()
@@ -34,10 +35,13 @@ export const ItemListContainer = (props) => {
 
     return(
         
-        <div>
+        <div className = "producrender">
+            
             {loading ? <h1>Cargando...</h1> 
             : <ItemList productos = {data}/>}
 
+            <Link to={"/"} className = {"iniciobut"}>Inicio</Link>
+                
         </div>
     )
 }

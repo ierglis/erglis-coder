@@ -39,3 +39,9 @@ body{
     text-decoration:none;
 }
 
+.cart{
+    position: relative;
+    top: 13px;
+    width: 17px;
+}
+
