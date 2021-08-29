@@ -1,24 +1,35 @@
 import React,{useState, useEffect} from "react";
 import "./itemlistcontainer.css";
 import {ItemList} from "./ItemList/ItemList"
-import {PedirDatos} from "../../helpers/PedirDatos";
-
+import {pedirDatos} from "../../helpers/pedirDatos";
+import { useParams } from "react-router-dom";
 
 export const ItemListContainer = (props) => {
+    const { catId } = useParams()
 
+    console.log(catId)
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
-
-    useEffect(  () => {
+    
+    useEffect( ()=> {
         setLoading(true)
 
-        PedirDatos()
-        .then((prod)=>{setData(prod)})
-        .catch((err) =>{console.log(err)})
-        .finally(()=>{
-            setLoading(false)
-        })
-    }, [])
+        pedirDatos()
+            .then(res => {
+
+                if (catId) {
+                    const catFilter = res.filter( prod => prod.idCat === catId)
+                    setData( catFilter )
+                } else {
+                    setData(res)
+                }
+            })
+            .catch(err => console.log(err))
+            .finally(()=> {
+                setLoading(false)
+            })
+
+    }, [catId])
 
 
     return(

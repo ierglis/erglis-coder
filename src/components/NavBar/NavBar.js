@@ -1,6 +1,7 @@
 import React from 'react';
 import "./navbar.css";
 import {CartWidget} from "../CartWidget/CartWidget";
+import {Link} from "react-router-dom"
 
 export const NavBar = () => {
    
@@ -12,9 +13,9 @@ export const NavBar = () => {
                     <img className= "logo" alt= "" src = "/imagen/kelderLogo.png"/>
                 </div>
                 <div className = "categorias">
-                    <a href = "#zapatillas"><p>Zapatillas</p></a>
-                    <a href = "#zapatos"><p>Zapatos</p></a>
-                    <a href = "#pantalones"><p>Pantalones</p></a>
+                    <Link to = {"/category/zapatillas"}><p>Zapatillas</p></Link>
+                    <Link to = {"/category/zapatos"}><p>Zapatos</p></Link>
+                    <Link to = {"/category/ojotas"}><p>Ojotas</p></Link>
                     <CartWidget/>
                 </div>
             </div>
