@@ -10,14 +10,15 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Switch>
+          
+
+          <Route path = "/category/:catId">
+            <ItemListContainer/>
+          </Route>
+
           <Route exact path = "/">
             <ItemListContainer/>
           </Route>
-
-          <Route exact path = "/category/:catId">
-            <ItemListContainer/>
-          </Route>
-
         </Switch>
       </BrowserRouter>
     </div>
