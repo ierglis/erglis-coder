@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
-// import "./itemDetailContainer.css";
-import {ItemDetail} from "./ItemDetail"
+import "./itemdetailcontainer.css";
+import {ItemDetail} from "./ItemDetail/ItemDetail"
 import {pedirDatos} from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom"
 
@@ -24,6 +24,7 @@ export const ItemDetailContainer = () => {
 
     }, [itemId])
 
+   
 
     return (
         <div>

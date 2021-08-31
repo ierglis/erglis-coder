@@ -3,10 +3,12 @@ import "./itemlistcontainer.css";
 import {ItemList} from "./ItemList/ItemList"
 import {pedirDatos} from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom"
 
 export const ItemListContainer = (props) => {
     const { catId } = useParams()
 
+    console.log(catId)
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
@@ -17,8 +19,8 @@ export const ItemListContainer = (props) => {
             .then(res => {
 
                 if (catId) {
-                    const arrayFiltrado = res.filter( prod => prod.idCat === catId)
-                    setData( arrayFiltrado )
+                    const catFilter = res.filter( prod => prod.idCat === catId)
+                    setData( catFilter )
                 } else {
                     setData(res)
                 }
@@ -33,10 +35,13 @@ export const ItemListContainer = (props) => {
 
     return(
         
-        <div>
+        <div className = "producrender">
+            
             {loading ? <h1>Cargando...</h1> 
             : <ItemList productos = {data}/>}
 
+            <Link to={"/"} className = {"iniciobut"}>Inicio</Link>
+                
         </div>
     )
 }
