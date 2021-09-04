@@ -4,39 +4,17 @@ import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { CartScreen } from "./components/CartWidget/CartScreen/CartScreen"
 import {ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer" 
-import { CartContext } from "./context/CartContext";
-import { useState} from "react"
+import { CartProvider } from "./context/CartContext"
+
 
 
 function App() {
-
-  const [cart, setCart] = useState([])
-  
-  
-  const agregar = (prod) => {
-    setCart([
-        ...cart,
-        prod,
-    ])
-  }
-
-  const eliminar = (id) => {
-    setCart (cart.filter(prod => prod.id !== id))
-  }
-
-   const cantidadCart = () => {
-   return cart.reduce((acc, prod) => acc + prod.cantidad, 0)
-  }
-
-  const vaciar = () => {
-    setCart ([])
-  }
 
 
   return (
     <div>
       
-        <CartContext.Provider value = {{cart, agregar, eliminar, cantidadCart, vaciar}}>
+        <CartProvider>
           <BrowserRouter>
             <NavBar/>
             <Switch>
@@ -59,7 +37,7 @@ function App() {
 
             </Switch>
           </BrowserRouter>
-        </CartContext.Provider>
+        </CartProvider>
       
     </div>
   );
