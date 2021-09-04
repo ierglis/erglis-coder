@@ -1,8 +1,10 @@
-import React from "react"
-import "./itemcount.css"
+// import React, { useContext, useState } from 'react';
+import "./itemcount.css";
+
 
 export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
 
+    
     const handleSuma = () => {
         if (cantidad < max){
             setCantidad(cantidad + 1)

@@ -1,15 +1,16 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import "./itemlistcontainer.css";
 import {ItemList} from "./ItemList/ItemList"
 import {pedirDatos} from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom"
 
+
 export const ItemListContainer = (props) => {
     const { catId } = useParams()
 
-    console.log(catId)
     const [data, setData] = useState([])
+
     const [loading, setLoading] = useState(false)
     
     useEffect( ()=> {

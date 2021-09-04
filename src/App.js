@@ -2,16 +2,41 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import { CartWidget } from "./components/CartWidget/CartWidget"
+import { CartScreen } from "./components/CartWidget/CartScreen/CartScreen"
 import {ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer" 
-// import { CartProvider } from "./context/CartContext";
+import { CartContext } from "./context/CartContext";
+import { useState} from "react"
 
 
 function App() {
+
+  const [cart, setCart] = useState([])
+  
+  
+  const agregar = (prod) => {
+    setCart([
+        ...cart,
+        prod,
+    ])
+  }
+
+  const eliminar = (id) => {
+    setCart (cart.filter(prod => prod.id !== id))
+  }
+
+   const cantidadCart = () => {
+   return cart.reduce((acc, prod) => acc + prod.cantidad, 0)
+  }
+
+  const vaciar = () => {
+    setCart ([])
+  }
+
+
   return (
     <div>
-{/*       
-        <CartProvider> */}
+      
+        <CartContext.Provider value = {{cart, agregar, eliminar, cantidadCart, vaciar}}>
           <BrowserRouter>
             <NavBar/>
             <Switch>
@@ -25,7 +50,7 @@ function App() {
               </Route>
 
               <Route exact path = "/carrito">
-                <CartWidget/>
+                <CartScreen/>
               </Route>
 
               <Route exact path = "/detail/:itemId">
@@ -34,7 +59,7 @@ function App() {
 
             </Switch>
           </BrowserRouter>
-        {/* </CartProvider> */}
+        </CartContext.Provider>
       
     </div>
   );

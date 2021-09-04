@@ -1,15 +1,19 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import {Link} from "react-router-dom"
 import "./itemdetail.css";
 import { ItemCount } from "../../ItemCount/ItemCount"
+import { CartContext } from "../../../context/CartContext";
+
 
 export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
 
     const [cantidad, setCantidad] = useState(1)
-
-    const agregar = () => {
-
+    const {agregar} = useContext(CartContext)
+    
+    const handleAdd = () => {
+        agregar({id, name, desc, img, price, idCat, stock, cantidad})
     }
+    
     
     return (
         <div className = "contenedordedetail">
@@ -23,7 +27,7 @@ export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
                         <h1>{name}</h1>
                         <p className = "descont">{desc}</p>
                         <p className ="pricecont">Precio: {price}</p>
-                        <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {agregar}/>
+                        <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {handleAdd}/>
                         <button className = "addcartboton fincompra">Finalizar Compra</button>
                     </div>
                 </div>
