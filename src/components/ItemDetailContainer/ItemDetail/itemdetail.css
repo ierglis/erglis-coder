@@ -42,7 +42,7 @@
 }
 
 .addcartboton{
-    margin-top: 70px;
+    margin-top: 43px;
     background-color: #e7413b;
     border: 0;
     padding: 12px 80px;
@@ -52,7 +52,7 @@
 }
 
 .addcartboton:hover{
-    margin-top: 70px;
+    margin-top: 43px;;
     background-color: black;
     border: 0;
     padding: 12px 80px;
@@ -74,4 +74,12 @@
     margin-top: 60px;
     color: black;
     font-size: 25px;
+}
+
+.fincompra{
+    margin-top:20px;
+}
+
+.fincompra:hover{
+    margin-top:20px;
 }
