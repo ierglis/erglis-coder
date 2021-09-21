@@ -12,7 +12,7 @@ function App() {
         <NavBar/>
         <Switch>
 
-          <Route exact path = "/">
+          <Route exact path = "/category/:catId">
             <ItemListContainer/>
           </Route>
 
