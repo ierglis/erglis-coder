@@ -16,19 +16,20 @@ export const CartProvider = ({children}) => {
   
     const agregar = (data, cantidad) => {
         if (isInCart(data)){
-            cart.map(prod => {
-                
+            const newCart = cart.map((prod) => {
                 if (prod.id === data.id) {
-                    return cart.cantidad += cantidad
+                   return { ...prod, cantidad: prod.cantidad + data.cantidad };
+                } else {
+                   return prod;
                 }
-                
-            })
-        } else {
-            setCart(state => {
-                return  [...state, {...data, stock: cantidad}]
-            })
-        }
-    }
+             })
+             return setCart(newCart)
+          } else {
+             setCart((state) => {
+                return [...state, { ...data }]
+             })
+          }
+       }
   
     const eliminar = (id) => {
       setCart (cart.filter(prod => prod.id !== id))

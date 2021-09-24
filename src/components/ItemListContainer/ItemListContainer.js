@@ -12,30 +12,29 @@ export const ItemListContainer = (props) => {
     const [data, setData] = useState([])
 
     const [loading, setLoading] = useState(false)
-    
-    useEffect( ()=> {
+    useEffect(() => {
 
         setLoading(true)
         
         const db = getFirestore()
-        const productos = db.collection("productos")
+        let productos = db.collection("productos")
+
+        if (catId) {
+           productos = productos.where("idCat", "==", catId)
+        }
 
         productos.get()
             .then((res) => {
-                const data = res.docs.map ((doc) => ({...doc.data(), id:doc.id}))
-                console.log(data)
+            const data = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
 
-                if (catId) {
-                    setData(data.filter( prod => prod.idCat === catId))   
-                }
+            setData(data)
+           })
+           .catch((err) => console.log(err))
 
-            })
-          
-            .catch(err => console.log(err))
-            .finally(()=> {
-                setLoading(false)
-            })
-
+           .finally(() => {
+              setLoading(false)
+           })
+           
     }, [catId, setLoading])
 
 
