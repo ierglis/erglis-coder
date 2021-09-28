@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./navbar.css";
 import {Link} from "react-router-dom"
 import { CartWidget } from '../CartWidget/CartWidget';
+import { CartContext } from "../../context/CartContext";
 
 export const NavBar = () => {
    
+    const {cantidadCart} = useContext(CartContext)
+
     return(
+   
 
         <header className = "navbar">
             <div className = "rowContent">
@@ -16,11 +20,16 @@ export const NavBar = () => {
                     <Link to = {"/category/zapatillas"}><p>Zapatillas</p></Link>
                     <Link to = {"/category/zapatos"}><p>Zapatos</p></Link>
                     <Link to = {"/category/ojotas"}><p>Ojotas</p></Link>
-                    <CartWidget/>
                     
+                    {cantidadCart() > 0 ?
+                    <CartWidget/> 
+                    :
+                    null
+                    }
                 </div>
             </div>
             
         </header>
+        
     );
 }
