@@ -1,5 +1,6 @@
-// import React, { useContext, useState } from 'react';
+ import React, { useState } from 'react';
 import "./itemcount.css";
+
 
 
 export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
@@ -15,16 +16,26 @@ export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
             setCantidad(cantidad - 1)
         }
     }
+
+    const [changeClass, setChangeClass] = useState(false)
     
+    const change = () => {
+        return  setChangeClass(true)
+    }
+
     return (
         <div>
-            <div className = "cantidadprod">
+            <div className = { changeClass ? "dnone" : "cantidadprod"}>
                 <button className = "butresta" onClick = {handleResta}>-</button>
                 <p className = "numcantidad">{cantidad}</p>
                 <button className = "butsuma" onClick = {handleSuma}>+</button>
             
             </div>
-            <button className = "addcartboton" onClick = {addCart}>Agregar al carrito</button>
+            <button className = { changeClass ? "dnone" : "addcartboton"} onClick = {()=>{
+                 addCart()
+                 change()
+                            }                }
+                >Agregar al carrito</button>
         </div>
     )
 }
