@@ -11,6 +11,13 @@ export const CartScreen = () => {
 
     return (
        <div> 
+           
+            {
+            cart.length === 0 ? 
+            <h1>EL CARRITO ESTA VACIO</h1>
+            :
+
+            
                 <div className = "carrito">
                     <h1 className = "cartitle">Carrito de compras</h1>
                     <div className = "contenedor-prod">
@@ -57,7 +64,7 @@ export const CartScreen = () => {
                         <button className = "termcompra">Finalizar Compra</button>
                     </div>
                 </div>
-               
+               }
         </div>        
     )
 }

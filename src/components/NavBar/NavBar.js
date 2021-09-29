@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import "./navbar.css";
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import { CartWidget } from '../CartWidget/CartWidget';
 import { CartContext } from "../../context/CartContext";
 
 export const NavBar = () => {
    
+    const location = useLocation()
     const {cantidadCart} = useContext(CartContext)
 
     return(
@@ -20,8 +21,8 @@ export const NavBar = () => {
                     <Link to = {"/category/zapatillas"}><p>Zapatillas</p></Link>
                     <Link to = {"/category/zapatos"}><p>Zapatos</p></Link>
                     <Link to = {"/category/ojotas"}><p>Ojotas</p></Link>
-                    
-                    {cantidadCart() > 0 ?
+                    {console.log(location.pathname)}
+                    {cantidadCart() > 0 && location.pathname !== "/carrito" ?
                     <CartWidget/> 
                     :
                     null

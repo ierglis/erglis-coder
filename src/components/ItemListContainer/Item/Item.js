@@ -12,7 +12,7 @@ export const Item = ({ id, name, img, desc, price }) => {
             <h3>{name}</h3>
             <p>{desc}</p>
             <h4>{price}</h4>
-            <button className="buybutt">Agregar al carrito</button>
+            <button className="buybutt">Ver más</button>
           </Link>
         </div>
       </div>
