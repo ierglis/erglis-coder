@@ -1,0 +1,38 @@
+.cantidadprod{
+    display: flex;
+    justify-content: center;
+}
+
+.numcantidad{
+    width: 35px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 35px;
+    margin: 0;
+    align-items: center;
+    font-size: 30px;
+}
+
+.butsuma {
+    width: 35px;
+    height: 35px;
+    background-color: #e7413b;
+    color: white;
+    border-radius: 4px;
+}   
+
+.butresta{
+    width: 35px;
+    height: 35px;
+    background-color: #e7413b;
+    color: white;
+    border-radius: 4px;
+}
+
+.butsuma:hover{
+    background-color: black;
+}
+.butresta:hover{
+    background-color: black;
+}

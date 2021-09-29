@@ -1,10 +1,20 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import {Link} from "react-router-dom"
 import "./itemdetail.css";
+import { ItemCount } from "../../ItemCount/ItemCount"
+import { CartContext } from "../../../context/CartContext";
 
-export const ItemDetail = ({ id, name, desc, img, price, idCat }) => {
 
-    console.log (idCat)
+export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
+
+    const [cantidad, setCantidad] = useState(1)
+    const {agregar} = useContext(CartContext)
+    
+    const handleAdd = () => {
+        agregar({id, name, desc, img, price, idCat, stock, cantidad})
+    }
+    
+    
     return (
         <div className = "contenedordedetail">
             <h1>DETALLE DEL PRODUCTO</h1>
@@ -17,7 +27,8 @@ export const ItemDetail = ({ id, name, desc, img, price, idCat }) => {
                         <h1>{name}</h1>
                         <p className = "descont">{desc}</p>
                         <p className ="pricecont">Precio: {price}</p>
-                        <button className = "addcartboton">Agregar al carrito</button>
+                        <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {handleAdd}/>
+                        <button className = "addcartboton fincompra">Finalizar Compra</button>
                     </div>
                 </div>
             </div>
