@@ -1,35 +1,40 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
-import { getFirestore } from "../../firebase/config"
-import firebase from "firebase/app"
-import "firebase/firestore"
+import { generateOrder } from "../../firebase/generateOrder"
 
 export const Checkout = () => {
 
-    const db = getFirestore()
-    const orders = db.collection("orders")
-
     const {cart, totalCart} = useContext(CartContext)
 
-    const userInfo = {
-        name: "juan",
-        tel: 15,
-        email: "asd@asd.com"
+    const [userInfo, setUserInfo] = useState({
+        name: "",
+        tel: "",
+        email: 0
+    })
+
+    const handleInputChange = (e) =>{
+        setUserInfo({
+            ...userInfo,
+            [e.target.name] : e.target.value
+        })
+    }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        generateOrder(userInfo, cart, totalCart())
     }
 
-    const newOrder ={
-        buyer: userInfo,
-        items: cart,
-        total: totalCart(),
-        date: firebase.firestore.Timestamp.fromDate(new Date())
-    }
-
-    console.log(newOrder)
     return(
         <div>
 
             <h1>Checkout</h1>
+            
+            <form onSubmit = {handleSubmit}>
+                <input type= "text" value = {userInfo.name} onChange = {handleInputChange} name = "name"></input>
 
+            </form>
+
+            <button onClick = {() => generateOrder(userInfo, cart, totalCart())}>FINALIZAR COMPRA</button>
         </div>
     )
 }
