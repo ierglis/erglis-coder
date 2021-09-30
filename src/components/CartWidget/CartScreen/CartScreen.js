@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { CartContext } from "../../../context/CartContext"
 import "./cartscreen.css"
+import {Link} from "react-router-dom"
 
 export const CartScreen = () => {
     
@@ -61,7 +62,7 @@ export const CartScreen = () => {
                     </div>
                     <div className = "botonescart">
                         <button className = "emptycart" onClick = {vaciar}>Vaciar Carrito</button>
-                        <button className = "termcompra">Finalizar Compra</button>
+                        <Link to = "/checkout"><button className = "termcompra">Finalizar Compra</button></Link>
                     </div>
                 </div>
                }

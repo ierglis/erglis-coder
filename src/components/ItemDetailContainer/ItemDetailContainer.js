@@ -22,7 +22,6 @@ export const ItemDetailContainer = () => {
         const item = productos.doc (itemId)
 
         item.get().then((res) => {
-            console.log(res.data())
             setItem( {...res.data(), id:res.id} )
         })
 

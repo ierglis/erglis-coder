@@ -3,7 +3,7 @@ import "./itemcount.css";
 
 
 
-export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
+export const ItemCount = ({max, cantidad, setCantidad, addCart, addOEnd}) =>{
 
     
     const handleSuma = () => {
@@ -34,7 +34,8 @@ export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
             <button className = { changeClass ? "dnone" : "addcartboton"} onClick = {()=>{
                  addCart()
                  change()
-                            }                }
+                 addOEnd(true)
+                }}
                 >Agregar al carrito</button>
         </div>
     )
