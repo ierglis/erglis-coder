@@ -9,7 +9,8 @@ export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
 
     const [cantidad, setCantidad] = useState(1)
     const {agregar} = useContext(CartContext)
-    
+    const [addOEnd, setAddOEnd] = useState(false)
+
     const handleAdd = () => {
         agregar({id, name, desc, img, price, idCat, stock, cantidad})
     }
@@ -26,8 +27,13 @@ export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
                         <h1>{name}</h1>
                         <p className = "descont">{desc}</p>
                         <p className ="pricecont">Precio: {price}</p>
-                        <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {handleAdd}/>
-                        <Link to="/carrito"><button className = "addcartboton fincompra">Finalizar Compra</button></Link>
+                        
+                        {addOEnd === false ?
+                            <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {handleAdd} addOEnd = {setAddOEnd}/>
+                            :
+                            <Link to="/carrito"><button className = "addcartboton fincompra">Finalizar Compra</button></Link>
+                        }
+                        
                     </div>
                 </div>
             </div>

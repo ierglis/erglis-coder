@@ -1,16 +1,24 @@
 import React, { useContext } from "react"
 import { CartContext } from "../../../context/CartContext"
 import "./cartscreen.css"
+import {Link} from "react-router-dom"
 
 export const CartScreen = () => {
     
-    const {cart, eliminar, vaciar} = useContext(CartContext)
-    const {cantidadCart} = useContext(CartContext)
+    const {cart, eliminar, vaciar, cantidadCart} = useContext(CartContext)
+    
     
     let acum = 0
 
     return (
        <div> 
+           
+            {
+            cart.length === 0 ? 
+            <h1>EL CARRITO ESTA VACIO</h1>
+            :
+
+            
                 <div className = "carrito">
                     <h1 className = "cartitle">Carrito de compras</h1>
                     <div className = "contenedor-prod">
@@ -54,10 +62,10 @@ export const CartScreen = () => {
                     </div>
                     <div className = "botonescart">
                         <button className = "emptycart" onClick = {vaciar}>Vaciar Carrito</button>
-                        <button className = "termcompra">Finalizar Compra</button>
+                        <Link to = "/checkout"><button className = "termcompra">Finalizar Compra</button></Link>
                     </div>
                 </div>
-               
+               }
         </div>        
     )
 }
