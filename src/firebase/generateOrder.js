@@ -17,19 +17,6 @@ export const generateOrder = (cart, userInfo, totalCart) =>{
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 
-        cart.forEach((prod) => {
-
-            const docRef = db.collection("productos").doc(prod.id)
-
-            docRef.get()
-                .then(doc => {
-                    const prodUpdate = docRef.update({
-                        stock: doc.data().stock - prod.cantidad
-                    })
-                    prodUpdate.then((res) => console.log(res))
-                })
-        })
-
         orders.add(newOrder)
             .then((res) => {
                 resolve(res.id)

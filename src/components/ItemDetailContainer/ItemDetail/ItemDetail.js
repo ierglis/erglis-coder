@@ -26,7 +26,7 @@ export const ItemDetail = ({ id, name, desc, img, price, idCat, stock }) => {
                     <div className="detcontent">
                         <h1>{name}</h1>
                         <p className = "descont">{desc}</p>
-                        <p className ="pricecont">Precio: {price}</p>
+                        <p className ="pricecont">Precio: {"$ " + price}</p>
                         
                         {addOEnd === false ?
                             <ItemCount max = {stock} cantidad = {cantidad} setCantidad = {setCantidad} addCart = {handleAdd} addOEnd = {setAddOEnd}/>

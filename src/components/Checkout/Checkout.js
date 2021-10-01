@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { generateOrder } from "../../firebase/generateOrder"
 import { Redirect } from "react-router-dom"
+import "./checkout.css"
 
 export const Checkout = () => {
 
@@ -9,29 +10,41 @@ export const Checkout = () => {
 
     const [userInfo, setUserInfo] = useState({
         name: "",
-        tel: 0,
-        email: ""
+        tel: "",
+        email: "",
+        emailconf:""
     })
 
+    
     const handleInputChange = (e) =>{
+        
         setUserInfo({
             ...userInfo,
             [e.target.name] : e.target.value
+            
         })
     }
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(userInfo.name.length > 3 && userInfo.tel.length > 8 && userInfo.email.length > 6){
-            generateOrder(userInfo, cart, totalCart())
+        
+        if(userInfo.email !== userInfo.emailconf){
+            
+            alert("Los emails no coinciden")
+            
+        } 
+
+        if(userInfo.name.length <=3 || userInfo.tel.length <= 8 || userInfo.email.length <= 6 || userInfo.emailconf.length <=6){
+            alert("Complete correctamente los campos")
+        }
+
+        if(userInfo.name.length > 3 && userInfo.tel.length > 8 && userInfo.email.length > 6 && userInfo.email === userInfo.emailconf){
+            generateOrder(cart, userInfo, totalCart())
             .then(res => {
                 alert(res)
                 vaciar()
             })
             .catch(err => alert(err))
-        }
-        else{
-            alert("Campos inválidos")
         }
     }
 
@@ -45,8 +58,8 @@ export const Checkout = () => {
                 ?
                 <Redirect to ="/"/>
                 :
-                <div>
-                    <form onSubmit = {handleSubmit}>
+                <div className = "formcontainer">
+                    <form className = "formcontent" onSubmit = {handleSubmit}>
                         <label for = "name">Nombre</label>
                         <input type= "text" value = {userInfo.name} onChange = {handleInputChange} name = "name" placeholder = "Ingrese su nombre" required />
 
@@ -55,9 +68,16 @@ export const Checkout = () => {
 
                         <label for = "email">Email</label>
                         <input type= "email" value = {userInfo.email} onChange = {handleInputChange} name = "email" placeholder = "Ej: a@b.com" required />
+
+                        <label for = "email">Confirmar email</label>
+                        <input type= "email" value = {userInfo.emailconf} onChange = {handleInputChange} name = "emailconf" placeholder = "Ej: a@b.com" required />
+                    {console.log(userInfo.emailconf)}
+                    {console.log(userInfo)                    }
+                        <button type = "submit">FINALIZAR COMPRA</button>
+
                     </form>
                 
-                    <button type = "submit" onClick = {() => generateOrder(userInfo, cart, totalCart())}>FINALIZAR COMPRA</button>
+                    
                 </div>
                 }   
         </div>

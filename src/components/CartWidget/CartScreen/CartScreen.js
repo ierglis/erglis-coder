@@ -28,23 +28,23 @@ export const CartScreen = () => {
                             return( 
                             
                             <div className = "prodcart" key = {prod.id}>
-                                <div>
+                                <div className = "imgcartcont">
                                     <img className="imgcart" alt= "." src = {prod.img} />
                                 </div>
-                                <div>
+                                <div className = "namecartcont">
                                     <p className = "namecart">{prod.name}</p>
                                 </div>
-                                <div>
+                                <div className = "qttycartcont">
                                     <p className = "qttycart">{prod.cantidad}</p>
                                 </div>
-                                <div>
+                                <div className = "pricecartcont">
                                     <p className = "pricecart">{"$ " + prod.price}</p>
                                     
                                 </div>
-                                <div>
+                                <div className = "pricetotcartcont">
                                     <p className = "priceprod">{"$ " + prod.cantidad*prod.price}</p>
                                 </div>
-                                <div>
+                                <div className = "delcartcont">
                                     <button className = "delproductcart" onClick = {() => {eliminar(prod.id)}}>Eliminar producto</button>
                                 </div>
 
@@ -56,9 +56,9 @@ export const CartScreen = () => {
                     
                     </div>
                     
-                    <div>
-                    <h1 className = "cantidadtotal">{cantidadCart()}</h1>
-                    <h1>{acum}</h1>
+                    <div className = "totalcarrito">
+                    <h3 className = "cantidadtotal">Cantidad total: {cantidadCart()}</h3>
+                    <h3>El total a abonar es de : {"$ " + acum}</h3>
                     </div>
                     <div className = "botonescart">
                         <button className = "emptycart" onClick = {vaciar}>Vaciar Carrito</button>

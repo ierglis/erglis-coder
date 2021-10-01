@@ -24,14 +24,14 @@ export const ItemCount = ({max, cantidad, setCantidad, addCart, addOEnd}) =>{
     }
 
     return (
-        <div>
+        <div className = "countClass">
             <div className = { changeClass ? "dnone" : "cantidadprod"}>
                 <button className = "butresta" onClick = {handleResta}>-</button>
                 <p className = "numcantidad">{cantidad}</p>
                 <button className = "butsuma" onClick = {handleSuma}>+</button>
             
             </div>
-            <button className = { changeClass ? "dnone" : "addcartboton"} onClick = {()=>{
+            <button className = { changeClass ? "dnone" : "addcartboton agregarbot"} onClick = {()=>{
                  addCart()
                  change()
                  addOEnd(true)

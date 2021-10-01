@@ -40,3 +40,12 @@
 .dnone{
     display: none;
 }
+
+.countClass{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.agregarbot{
+    margin-top: 20px;
+}

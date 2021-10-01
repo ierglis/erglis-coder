@@ -81,3 +81,33 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.totalcarrito{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.imgcartcont{
+    align-self: center
+}
+
+.namecartcont{
+    align-self: center
+}
+
+.qttycartcont{
+    align-self: center
+}
+
+.pricecartcont{
+    align-self: center
+}
+
+.pricetotcartcont{
+    align-self: center
+}
+
+.delcartcont{
+    align-self: center
+}

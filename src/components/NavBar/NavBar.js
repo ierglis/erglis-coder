@@ -21,7 +21,7 @@ export const NavBar = () => {
                     <Link to = {"/category/zapatillas"}><p>Zapatillas</p></Link>
                     <Link to = {"/category/zapatos"}><p>Zapatos</p></Link>
                     <Link to = {"/category/ojotas"}><p>Ojotas</p></Link>
-                    {cantidadCart() > 0 && location.pathname !== "/carrito" ?
+                    {cantidadCart() > 0 && location.pathname !== "/carrito" && location.pathname !== "/checkout" ?
                     <CartWidget/> 
                     :
                     null
