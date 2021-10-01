@@ -71,8 +71,6 @@ export const Checkout = () => {
 
                         <label for = "email">Confirmar email</label>
                         <input type= "email" value = {userInfo.emailconf} onChange = {handleInputChange} name = "emailconf" placeholder = "Ej: a@b.com" required />
-                    {console.log(userInfo.emailconf)}
-                    {console.log(userInfo)                    }
                         <button type = "submit">FINALIZAR COMPRA</button>
 
                     </form>
