@@ -34,7 +34,7 @@ export const ItemCount = ({max, cantidad, setCantidad, addCart}) =>{
             <button className = { changeClass ? "dnone" : "addcartboton"} onClick = {()=>{
                  addCart()
                  change()
-                            }                }
+                }}
                 >Agregar al carrito</button>
         </div>
     )
